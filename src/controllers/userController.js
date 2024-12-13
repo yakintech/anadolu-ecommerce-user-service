@@ -19,6 +19,7 @@ const userController = {
     },
     userCheck: async (req, res) => {
         try {
+            console.log(req.body);
             const user = await userModel.findOne({ email: req.body.email, password: req.body.password });
             if (user) {
                 res.json(user);
